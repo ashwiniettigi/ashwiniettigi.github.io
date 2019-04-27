@@ -2,6 +2,6 @@
 permalink : /machineLearning/
 title : "Machine Learning"
 author_profile : true
-layout : home
+layout : default
 ---
 Exploring ML
