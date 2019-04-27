@@ -1,5 +1,5 @@
 ---
-layout: home
+layout: post
 title: Just starting
 date : 2016-04-02
 author_profile : true

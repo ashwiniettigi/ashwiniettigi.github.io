@@ -5,7 +5,7 @@ title: "Awesome Data Visualization"
 date:   2017-07-01 12:07:25 +0000
 categories:
   - data
-
+permalink: /2017/05/01/Viz/
 ---
 
 $$
