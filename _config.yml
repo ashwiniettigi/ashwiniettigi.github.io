@@ -16,7 +16,7 @@ minimal_mistakes_skin    : "air" # "default","air", "aqua", "contrast", "dark", 
 
 # Site Settings
 locale                   : "en-US"
-title                    : "Ashwini Ettigi"
+title                    : "AE"
 title_separator          : "-"
 name                     : "Ashwini Ettigi"
 description              : "Portfolio"
@@ -101,7 +101,7 @@ analytics:
 # Site Author
 author:
   name             : "Ashwini Ettigi"
-  avatar           : "/images/photo_bio.jpg"# path of avatar image, e.g. "/assets/images/bio-photo.jpg"
+  avatar           : "/images/photo_bio.jpg" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
   bio              : "I am an amazing person."
   location         : "Bangalore,IN"
   email            :
@@ -270,7 +270,7 @@ defaults:
       comments: # true
       share: true
       related: true
-      
+
   #_pages
   - scope:
       path: ""
@@ -278,5 +278,3 @@ defaults:
     values:
         layout: single
         author_proflie: true
-         
-         
