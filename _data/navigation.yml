@@ -6,6 +6,10 @@ main:
     url: /machineLearning/
   - title: "Blogs"
     url: /blog/ 
+  - title: "Data Analytics"
+    url: /dataAnalytics/
+  - title: "Products"
+    url: /products/
   # - title: "About"
   #   url: https://mmistakes.github.io/minimal-mistakes/about/
   # - title: "Sample Posts"
