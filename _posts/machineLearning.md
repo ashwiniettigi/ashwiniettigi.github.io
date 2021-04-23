@@ -4,4 +4,4 @@ title : "Machine Learning"
 author_profile : true
 layout : default
 ---
-Exploring ML
+Exploring ML in my own path.
