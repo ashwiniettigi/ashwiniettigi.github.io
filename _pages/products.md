@@ -1,8 +1,7 @@
 ---
 permalink : /products/
 title : "Products"
-author_profile : true
-layout : default
+author_profile : false
 ---
 
-Hello
+“Content is king." — Bill Gates, Co-Founder, Microsoft
