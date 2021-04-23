@@ -2,6 +2,6 @@
 permalink : /machineLearning/
 title : "Machine Learning"
 author_profile : false
-layout : single
+layout : archive
 ---
 Exploring ML in my own path.
