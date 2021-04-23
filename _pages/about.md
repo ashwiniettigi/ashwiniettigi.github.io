@@ -1,7 +1,7 @@
 ---
 title : "About"
 permalink : /about/
-author_profile : false
+author_profile : true
 ---
 A curious person out to explore the universe!
 
