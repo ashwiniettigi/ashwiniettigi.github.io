@@ -4,4 +4,5 @@ title : "Machine Learning"
 author_profile : false
 layout : single
 ---
-Exploring ML in my own path.
+
+“Machine Learning: A computer is able to learn from experience without being specifically programmed.”
