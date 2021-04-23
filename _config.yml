@@ -21,8 +21,8 @@ title_separator          : "-"
 name                     : "Ashwini Ettigi"
 description              : "Portfolio"
 url                      : "https://ashwiniettigi.github.io"
-baseurl                  : # the subpath of your site, e.g. "/blog"
-repository               : # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
+baseurl                  : "/blog"
+repository               : "/ashwiniettigi/ashwiniettigi.github.io"
 teaser                   : # path of fallback teaser image, e.g. "/assets/images/500x300.png"
 # breadcrumbs            : false # true, false (default)
 words_per_minute         : 200
@@ -104,7 +104,7 @@ author:
   avatar           : "/images/photo_bio.jpg" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
   bio              : "I am an amazing person."
   location         : "Bangalore,IN"
-  email            :
+  email            : "ashwiniettigi@gmail.com"
   uri              :
   home             : # null (default), "absolute or relative url to link to author home"
   bitbucket        :
@@ -137,6 +137,8 @@ include:
   - .htaccess
   - _pages
   - _posts
+  - _blogs
+  
 exclude:
   - "*.sublime-project"
   - "*.sublime-workspace"
