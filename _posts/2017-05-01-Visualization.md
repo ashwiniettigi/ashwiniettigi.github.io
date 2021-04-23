@@ -5,8 +5,15 @@ title: "Awesome Data Visualization"
 date:   2017-07-01 12:07:25 +0000
 categories:
   - data
-permalink: /2017/05/01/Viz/
+permalink: /dataAnalytics/dataVisualization/
 ---
+
+## Introduction
+
+In this lab, we will learn how to create word clouds and waffle charts. Furthermore, we will start learning about additional visualization libraries that are based on Matplotlib, namely the library *seaborn*, and we will learn how to create regression plots using the *seaborn* library.
+
+
+
 
 $$
 \begin{equation*}
@@ -23,9 +30,6 @@ $$
 
 <h1 align=center><font size = 5>Waffle Charts, Word Clouds, and Regression Plots</font></h1>
 
-## Introduction
-
-In this lab, we will learn how to create word clouds and waffle charts. Furthermore, we will start learning about additional visualization libraries that are based on Matplotlib, namely the library *seaborn*, and we will learn how to create regression plots using the *seaborn* library.
 
 ## Table of Contents
 
@@ -684,164 +688,3 @@ import seaborn as sns
 print('Seaborn installed and imported!')
 ```
 
-Create a new dataframe that stores that total number of landed immigrants to Canada per year from 1980 to 2013.
-
-
-```python
-# we can use the sum() method to get the total population per year
-df_tot = pd.DataFrame(df_can[years].sum(axis=0))
-
-# change the years to type float (useful for regression later on)
-df_tot.index = map(float,df_tot.index)
-
-# reset the index to put in back in as a column in the df_tot dataframe
-df_tot.reset_index(inplace = True)
-
-# rename columns
-df_tot.columns = ['year', 'total']
-
-# view the final dataframe
-df_tot.head()
-```
-
-With *seaborn*, generating a regression plot is as simple as calling the **regplot** function.
-
-
-```python
-import seaborn as sns
-ax = sns.regplot(x='year', y='total', data=df_tot)
-```
-
-This is not magic; it is *seaborn*! You can also customize the color of the scatter plot and regression line. Let's change the color to green.
-
-
-```python
-import seaborn as sns
-ax = sns.regplot(x='year', y='total', data=df_tot, color='green')
-```
-
-You can always customize the marker shape, so instead of circular markers, let's use '+'.
-
-
-```python
-import seaborn as sns
-ax = sns.regplot(x='year', y='total', data=df_tot, color='green', marker='+')
-```
-
-Let's blow up the plot a little bit so that it is more appealing to the sight.
-
-
-```python
-plt.figure(figsize=(15, 10))
-ax = sns.regplot(x='year', y='total', data=df_tot, color='green', marker='+')
-```
-
-And let's increase the size of markers so they match the new size of the figure, and add a title and x- and y-labels.
-
-
-```python
-plt.figure(figsize=(15, 10))
-ax = sns.regplot(x='year', y='total', data=df_tot, color='green', marker='+', scatter_kws={'s': 200})
-
-ax.set(xlabel='Year', ylabel='Total Immigration') # add x- and y-labels
-ax.set_title('Total Immigration to Canada from 1980 - 2013') # add title
-```
-
-And finally increase the font size of the tickmark labels, the title, and the x- and y-labels so they don't feel left out!
-
-
-```python
-plt.figure(figsize=(15, 10))
-
-sns.set(font_scale=1.5)
-
-ax = sns.regplot(x='year', y='total', data=df_tot, color='green', marker='+', scatter_kws={'s': 200})
-ax.set(xlabel='Year', ylabel='Total Immigration')
-ax.set_title('Total Immigration to Canada from 1980 - 2013')
-```
-
-Amazing! A complete scatter plot with a regression fit with 5 lines of code only. Isn't this really amazing?
-
-If you are not a big fan of the purple background, you can easily change the style to a white plain background.
-
-
-```python
-plt.figure(figsize=(15, 10))
-
-sns.set(font_scale=1.5)
-sns.set_style('ticks') # change background to white background
-
-ax = sns.regplot(x='year', y='total', data=df_tot, color='green', marker='+', scatter_kws={'s': 200})
-ax.set(xlabel='Year', ylabel='Total Immigration')
-ax.set_title('Total Immigration to Canada from 1980 - 2013')
-```
-
-Or to a white background with gridlines.
-
-
-```python
-plt.figure(figsize=(15, 10))
-
-sns.set(font_scale=1.5)
-sns.set_style('whitegrid')
-
-ax = sns.regplot(x='year', y='total', data=df_tot, color='green', marker='+', scatter_kws={'s': 200})
-ax.set(xlabel='Year', ylabel='Total Immigration')
-ax.set_title('Total Immigration to Canada from 1980 - 2013')
-```
-
-**Question**: Use seaborn to create a scatter plot with a regression line to visualize the total immigration from Denmark, Sweden, and Norway to Canada from 1980 to 2013.
-
-
-```python
-### type your answer here
-
-
-
-
-```
-
-<div align="right">
-<a href="#p1" class="btn btn-default" data-toggle="collapse">Click here for the solution</a>
-</div>
-
-<div id="p1" class="collapse">
-```
-
-# create df_countries dataframe
-df_countries = df_can.loc[['Denmark', 'Norway', 'Sweden'], years].transpose()
-
-# create df_total by summing across three countries for each year
-df_total = pd.DataFrame(df_countries.sum(axis=1))
-
-# reset index in place
-df_total.reset_index(inplace=True)
-
-# rename columns
-df_total.columns = ['year', 'total']
-
-# change column year from string to int to create scatter plot
-df_total['year'] = df_total['year'].astype(int)
-
-# define figure size
-plt.figure(figsize=(15, 10))
-
-# define background style and font size
-sns.set(font_scale=1.5)
-sns.set_style('whitegrid')
-
-# generate plot and add title and axes labels
-ax = sns.regplot(x='year', y='total', data=df_total, color='green', marker='+', scatter_kws={'s': 200})
-ax.set(xlabel='Year', ylabel='Total Immigration')
-ax.set_title('Total Immigrationn from Denmark, Sweden, and Norway to Canada from 1980 - 2013')
-```
-</div>
-
-### Thank you for completing this lab!
-
-This notebook was created by [Alex Aklson](https://www.linkedin.com/in/aklson/). I hope you found this lab interesting and educational. Feel free to contact me if you have any questions!
-
-This notebook is part of the free course on **Cognitive Class** called *Data Visualization with Python*. If you accessed this notebook outside the course, you can take this free self-paced course online by clicking [here](https://cocl.us/DV0101EN_Lab4).
-
-<hr>
-Copyright &copy; 2018 [Cognitive Class](https://cognitiveclass.ai/?utm_source=bducopyrightlink&utm_medium=dswb&utm_campaign=bdu). This notebook and its source code are released under the terms of the [MIT License](https://bigdatauniversity.com/mit-license/).
